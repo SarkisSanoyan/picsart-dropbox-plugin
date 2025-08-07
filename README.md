@@ -40,8 +40,8 @@ This project follows a clean, organized full-stack architecture:
 ### 1. Clone and Install Dependencies
 
 ```bash
-git clone <your-repo>
-cd fullstack-picsart-dropbox-plugin
+git clone https://github.com/SarkisSanoyan/picsart-dropbox-plugin.git
+cd picsart-dropbox-plugin
 npm install
 ```
 
