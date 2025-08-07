@@ -12,29 +12,6 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 
-// 🛡️ SECURITY HEADERS MIDDLEWARE
-// app.use((_req, res, next) => {
-//   // Content Security Policy
-//   res.setHeader('Content-Security-Policy', 
-//     "default-src 'self'; " +  // Only load resources from same origin
-//     "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +  // Allow inline scripts (needed for Vite)
-//     "style-src 'self' 'unsafe-inline'; " +
-//     "connect-src 'self' https://api.dropboxapi.com https://content.dropboxapi.com https://www.dropbox.com; " +  // Allow API calls to Dropbox
-//     "img-src 'self' data: blob: https://api.dropboxapi.com; " + // Allow images, data URLs, blob URLs (thumbnails)
-//     "font-src 'self'; " +
-//     "object-src 'none'; " + // Block plugins/embeds
-//     "base-uri 'self';"      // Prevent base tag hijacking
-//   );
-  
-//   // Additional security headers
-//   res.setHeader('X-Content-Type-Options', 'nosniff');
-//   res.setHeader('X-Frame-Options', 'DENY');
-//   res.setHeader('X-XSS-Protection', '1; mode=block');
-//   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-//   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
-//   next();
-// });
-
 // Request logging middleware
 app.use((req, _, next) => {
   console.log(`📝 ${new Date().toISOString()} - ${req.method} ${req.url}`);
